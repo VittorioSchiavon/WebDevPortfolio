@@ -27,12 +27,12 @@ html, body, ul, li {
   font-family: "Afacad", sans-serif;
   color: var(--textColor);
   scroll-behavior: smooth;
-  font-size: 14px;
+  font-size: 16px;
 
 }
 @media (max-width: 600px) {
   html{
-    font-size: 10px;
+    font-size: 12px;
 
   }
 }
@@ -116,7 +116,7 @@ section h2 {
 }
 .logoName{
   font-size: 2rem;
-  border: 4px solid var(--mainD);
+  border: 0.3rem solid var(--mainD);
   border-radius: 5000px;
   padding: 5px;
   width: 4rem;
@@ -130,7 +130,7 @@ section h2 {
 }
 .name{
   font-size: 2rem;
-  border: 4px solid var(--mainD);
+  border: 0.3rem solid var(--mainD);
   border-radius: 5000px;
   padding: 5px 10px;
   aspect-ratio: 1;
@@ -187,9 +187,15 @@ section h2 {
  text-transform: capitalize;
 }
 #about .right h2{
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0;
   font-weight: 900;
+}
+@media (max-width: 600px) {
+  #about .right{
+    text-align: center!important;
+
+  }
 }
 #about .right p{
   font-weight: 700;
@@ -260,11 +266,11 @@ width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 15rem;
+    max-width: 18rem;
     flex-grow: 1;
     gap: 5px;
     font-weight: 700;
-    border: 4px solid var(--mainD);
+    border: 0.3rem solid var(--mainD);
     padding: 0.8rem 1.6rem;
     border-radius: 100px;
     filter: drop-shadow(0 0 0.5rem var(--main));  
@@ -449,6 +455,7 @@ footer{
   vertical-align: top;
   min-width: 16rem;
   position: relative;
+  text-align: left!important;
 }
 
 .animated-item {
