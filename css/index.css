@@ -1,0 +1,502 @@
+/* Reset some default styles */
+*{
+  box-sizing: border-box;
+}
+:root{
+  --bgColor: rgb(232, 232, 232);
+  --textColor:rgb(36, 40, 46);
+  --main: #8ebcfc;
+  --mainD:#285798;
+  --main-1: rgb(255, 149, 74);
+
+}
+::-moz-selection { /* Code for Firefox */
+  color: var(--bgColor);
+  background: var(--mainD);
+  border-radius: 5px;
+}
+
+::selection {
+  color: var(--bgColor);
+  background: var(--mainD);
+  border-radius: 5px;
+}
+html, body, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: "Afacad", sans-serif;
+  color: var(--textColor);
+  scroll-behavior: smooth;
+  font-size: 14px;
+
+}
+@media (max-width: 600px) {
+  html{
+    font-size: 10px;
+
+  }
+}
+
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: var(--bgColor);
+  font-size: 1rem;
+
+}
+
+.totContentContainer{
+  max-width: 1000px;
+  margin: auto;
+}
+
+header {
+  color: var(--textColor);
+  padding: 2rem;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+nav ul li a {
+  color: var(--textColor);
+  text-decoration: none;
+  font-size: 1.2rem;
+
+}
+
+section {
+  padding: 10px;
+}
+
+section h2 {
+  margin-bottom: 10px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  header {
+      text-align: center;
+  }
+
+  nav ul {
+      display: block;
+      text-align: center;
+  }
+
+  nav ul li {
+      display: block;
+      margin-bottom: 10px;
+  }
+}
+
+
+.logo{
+  max-width: 50px;
+  filter: drop-shadow(0 0 1rem var(--main));
+}
+.logoName{
+  font-size: 2rem;
+  border: 4px solid var(--mainD);
+  border-radius: 5000px;
+  padding: 5px;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  color: var(--mainD);
+  font-weight: 900;
+
+}
+.name{
+  font-size: 2rem;
+  border: 4px solid var(--mainD);
+  border-radius: 5000px;
+  padding: 5px 10px;
+  aspect-ratio: 1;
+  color: var(--mainD);
+  font-weight: 900;
+
+}
+
+
+#about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profilePic{
+  width: 20rem;
+  height: 20rem;
+  border-radius:50%; 
+  background-color: var(--bgColor); 
+  box-shadow:
+  0 0 20rem 100px var(--main);
+  z-index: -10;
+  position: relative;
+  object-fit: cover;
+  border: 5px solid var(--mainD);
+  animation: fadeInAndSlideIn 1.5s ease-in-out; /* Use the floating animation with 3 seconds duration, ease-in-out timing function, and repeat infinitely */
+
+}
+@keyframes fadeInAndSlideIn {
+  from {
+    opacity: 0; /* Start with transparency */
+    transform: translateY(-30px); /* Start with the image above its final position */
+  }
+  to {
+    opacity: 1; /* End with full opacity */
+    transform: translateY(0); /* End at its final position */
+  }
+}
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at the original position */
+  }
+  50% {
+    transform: translateY(-5px); /* Move the element upwards */
+  }
+}
+#about .right{
+  max-width: 500px;
+  width: fit-content;
+ text-transform: capitalize;
+}
+#about .right h2{
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 900;
+}
+#about .right p{
+  font-weight: 700;
+  font-size: 1.2rem;
+
+}
+#about .right p .name{
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.link:hover{
+  color: var(--main);
+  border-bottom: 3px solid var(--mainD);
+
+}
+/*-------------------------*/
+
+#solutions .row{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap-reverse;
+column-gap: 2rem;
+width: 100%;
+}
+.digitalSolutionIcon{
+  max-width: 15rem;
+  filter: drop-shadow(0 0 0.5rem var(--main));  
+}
+
+#solutions .row .frase{
+  font-weight: 900;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  }
+  #solutions .row .moreDetails{
+  font-weight: 600;
+  font-size: 1rem;
+  max-width: 400px;
+  }
+  #benefitsSection h2{
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    text-align: center;
+
+  }
+
+  .benefits{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeInAndSlideIn 0.5s ease-in-out; /* Use the combined fadeInAndSlideIn animation with 1 second duration */
+
+  }
+  @media (max-width: 600px) {
+    benefits{
+      flex-direction: row;
+  
+    }
+  }
+  .benef{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 15rem;
+    flex-grow: 1;
+    gap: 5px;
+    font-weight: 700;
+    border: 4px solid var(--mainD);
+    padding: 0.8rem 1.6rem;
+    border-radius: 100px;
+    filter: drop-shadow(0 0 0.5rem var(--main));  
+
+    
+  }
+  .benefIcon{
+    font-size: 1.5rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--mainD);
+    border-radius: 50%;
+
+  }
+/*------------------------------------------*/
+.whyme{
+  border-bottom: 4px solid var(--mainD);
+  font-weight: 700;
+}
+#pros .container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+
+}
+#pros .container .row{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+#pros .container .proContainer{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  min-width: 300px;
+  gap: 1.5rem;
+}
+.proIcon{
+  background-color: var(--main);
+  color: var(--mainD);
+  padding: 1rem;
+  width: fit-content;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 1000px;
+  font-weight: 900;
+  box-shadow:
+  0 0 30px 00px var(--main);
+  animation: floating 1.2s ease-in-out infinite; /* Use the floating animation with 3 seconds duration, ease-in-out timing function, and repeat infinitely */
+
+}
+
+.proTitle{
+color: var(--mainD);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+  filter: drop-shadow(0 0 1rem var(--main));  
+
+}
+
+.proExplanation{
+  max-width: 350px;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  word-wrap: break-word;
+
+}
+
+#cosaFaccio .frase{
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+
+}
+
+
+#cosaFaccio .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8rem;
+  padding: 2rem;
+}
+#cosaFaccio .work{
+  box-shadow:
+  0 0 50px 00px var(--main),
+  0 0 40px 20px var(--main);
+  background-color: var(--main);
+  z-index: -10;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  padding: 2rem;
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+}
+.moreDetails{
+  font-weight: 600;
+  font-size: 1rem;
+
+  
+}
+#contact{
+  margin-bottom: 200px;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  #contact h2{
+    text-align: center!important;
+
+  }
+}
+
+#contact h2{
+  color: var(--mainD);
+  font-weight: 900;
+  text-align: right;
+  margin: 0;
+}
+#contact .info{
+  font-weight: 600;
+  margin: 0;
+}
+#contact .info p{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+
+}
+#contact .info p svg{
+  margin: 0;
+
+}
+#contact .myname{
+font-weight: 900;
+color: var(--mainD);
+font-size: 1.2rem;
+margin-bottom: 0.5rem!important;
+
+}
+footer{
+  text-align: center;
+  color: var(--mainD);
+  font-weight: 600;
+  padding: 5rem;
+}
+
+
+
+/*-------------------------------------- ANIMATION ___________________*/
+.animated-info {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 16rem;
+  position: relative;
+}
+
+.animated-item {
+  color: var(--mainD);
+}
+
+.animated-item {
+  line-height: inherit;
+  display: block;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  animation: BottomTotop 6s linear infinite 0s;
+}
+.animated-item:nth-child(2n+2) {
+  animation-delay: 2s;
+}
+.animated-item:nth-child(3n+3) {
+  animation-delay: 4s;
+}
+
+@keyframes BottomTotop {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
