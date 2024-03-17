@@ -150,8 +150,8 @@ section h2 {
 }
 
 .profilePic{
-  width: 20rem;
-  height: 20rem;
+  width: 13rem;
+  height: 13rem;
   border-radius:50%; 
   background-color: var(--bgColor); 
   box-shadow:
@@ -240,7 +240,7 @@ width: 100%;
   }
   #benefitsSection h2{
     font-weight: 900;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
     text-transform: capitalize;
     text-align: center;
@@ -249,10 +249,10 @@ width: 100%;
 
   .benefits{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     animation: fadeInAndSlideIn 0.5s ease-in-out; /* Use the combined fadeInAndSlideIn animation with 1 second duration */
 
   }
@@ -266,12 +266,12 @@ width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 18rem;
+    max-width: 12rem;
     flex-grow: 1;
     gap: 5px;
     font-weight: 700;
     border: 0.25rem solid var(--mainD);
-    padding: 0.8rem 1.6rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 100px;
     filter: drop-shadow(0 0 0.5rem var(--main));  
 
@@ -438,8 +438,8 @@ font-weight: 900;
 color: var(--mainD);
 font-size: 1.2rem;
 margin-bottom: 0.5rem!important;
-
 }
+
 footer{
   text-align: center;
   color: var(--mainD);
