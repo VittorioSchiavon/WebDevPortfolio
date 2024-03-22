@@ -24,7 +24,7 @@
 html, body, ul, li {
   margin: 0;
   padding: 0;
-  font-family: "Afacad", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: var(--textColor);
   scroll-behavior: smooth;
   font-size: 16px;
@@ -55,6 +55,7 @@ header {
   color: var(--textColor);
   padding: 2rem;
   padding-bottom: 0;
+  column-gap: 4rem;
   row-gap: 2rem;
   display: flex;
   align-items: center;
@@ -64,6 +65,10 @@ flex-wrap: wrap;
 
 header h1 {
   margin: 0;
+}
+nav{
+  flex-grow: 1;
+  margin-bottom: 1rem;
 }
 
 nav ul {
@@ -75,6 +80,9 @@ nav ul li {
   display: inline;
   margin-right: 20px;
   font-weight: 700;
+}
+nav ul li:last-child {
+  margin-right: 0px;
 }
 
 nav ul li a {
@@ -491,7 +499,7 @@ color: var(--mainD);
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
@@ -516,13 +524,14 @@ color: var(--mainD);
   border-radius: 10px;
   border: 4px solid var(--mainD);
   padding: 2rem;
+  max-width: 100%;
 }
 #contact .info p{
   margin: 0;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 
 }
 #contact .info p svg{
