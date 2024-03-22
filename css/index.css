@@ -50,7 +50,6 @@ body {
 .totContentContainer{
   margin: auto;
 }
-
 header {
   color: var(--textColor);
   padding: 2rem;
@@ -60,37 +59,65 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 header h1 {
   margin: 0;
 }
-nav{
-  flex-grow: 1;
-  margin-bottom: 1rem;
+
+nav {
+  width: fit-content;
 }
 
-nav ul {
+.navList {
   list-style: none;
   text-align: right;
 }
 
-nav ul li {
+.navList li {
   display: inline;
   margin-right: 20px;
   font-weight: 700;
 }
-nav ul li:last-child {
+
+.navList li:last-child {
   margin-right: 0px;
 }
 
-nav ul li a {
+.navList li a {
   color: var(--textColor);
   text-decoration: none;
   font-size: 1rem;
-
 }
+
+.menu-toggle {
+  display: none; /* Initially hide the hamburger menu */
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--mainD);
+}
+
+@media screen and (max-width: 600px) {
+  .navList {
+    display: none; /* Hide the nav links when screen size is smaller than 600px */
+    width: 100%;
+
+  }
+
+  .menu-toggle {
+    display: block; /* Show the hamburger menu */
+    cursor: pointer;
+  }
+  .active {
+    display: block; /* Show the nav links when hamburger menu is toggled */
+  }
+  .menu-toggle .active + .list {
+    display: block; /* Show the nav links when hamburger menu is toggled */
+  }
+}
+
 
 section {
   padding: 10px;
@@ -493,13 +520,12 @@ color: var(--mainD);
 }
 #contact{
   margin-bottom: 50px;
-  height: 50vh;
   margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
@@ -531,7 +557,7 @@ color: var(--mainD);
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 
 }
 #contact .info p svg{
@@ -649,4 +675,5 @@ footer{
 .faq-item {
   /* Add additional styling as needed */
   border-bottom: 1px solid var(--main);
+  padding:0 2rem ;
 }

@@ -109,3 +109,10 @@ $cards.forEach(($card) => {
     $card.style.background = "";
   });
 });
+
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('.navList').classList.toggle('active'); // Toggle the 'active' class on nav ul
+  this.classList.toggle('active'); // Toggle the 'active' class on the menu toggle button
+  document.querySelector('.menu-toggle').textContent = document.querySelector('.menu-toggle').textContent === "✕" ? "☰" : "✕";
+});
