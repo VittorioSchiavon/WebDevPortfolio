@@ -28,6 +28,8 @@ html, body, ul, li {
   color: var(--textColor);
   scroll-behavior: smooth;
   font-size: 16px;
+  perspective: 1500px;
+
 
 }
 @media (max-width: 600px) {
@@ -46,7 +48,6 @@ body {
 }
 
 .totContentContainer{
-  max-width: 1000px;
   margin: auto;
 }
 
@@ -54,9 +55,11 @@ header {
   color: var(--textColor);
   padding: 2rem;
   padding-bottom: 0;
+  row-gap: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+flex-wrap: wrap;
 }
 
 header h1 {
@@ -65,18 +68,19 @@ header h1 {
 
 nav ul {
   list-style: none;
+  text-align: right;
 }
 
 nav ul li {
   display: inline;
   margin-right: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 nav ul li a {
   color: var(--textColor);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
 }
 
@@ -92,22 +96,6 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-  header {
-      text-align: center;
-  }
-
-  nav ul {
-      display: block;
-      text-align: center;
-  }
-
-  nav ul li {
-      display: block;
-      margin-bottom: 10px;
-  }
-}
 
 
 .logo{
@@ -147,11 +135,12 @@ section h2 {
   width: 100%;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 4rem;
 }
 
 .profilePic{
-  width: 13rem;
-  height: 13rem;
+  width: 17rem;
+  height: 17rem;
   border-radius:50%; 
   background-color: var(--bgColor); 
   box-shadow:
@@ -160,8 +149,8 @@ section h2 {
   position: relative;
   object-fit: cover;
   border: 5px solid var(--mainD);
-  animation: fadeInAndSlideIn 1.5s ease-in-out; /* Use the floating animation with 3 seconds duration, ease-in-out timing function, and repeat infinitely */
-
+  animation: fadeInAndSlideIn  1.5s ease-in-out; /* Use the floating animation with 3 seconds duration, ease-in-out timing function, and repeat infinitely */
+animation: floating 2s ease-in-out infinite;
 }
 @keyframes fadeInAndSlideIn {
   from {
@@ -182,12 +171,12 @@ section h2 {
   }
 }
 #about .right{
-  max-width: 500px;
+  max-width: 600px;
   width: fit-content;
  text-transform: capitalize;
 }
 #about .right h2{
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0;
   font-weight: 900;
 }
@@ -217,13 +206,14 @@ section h2 {
 #solutions .row{
 display: flex;
 align-items: center;
-justify-content: space-evenly;
+justify-content: center;
 flex-wrap: wrap-reverse;
 column-gap: 2rem;
 width: 100%;
+margin-bottom: 3rem;
 }
 .digitalSolutionIcon{
-  max-width: 15rem;
+  max-width: 12rem;
   filter: drop-shadow(0 0 0.5rem var(--main));  
 }
 
@@ -238,12 +228,19 @@ width: 100%;
   font-size: 1rem;
   max-width: 400px;
   }
+  #benefitsSection{
+    background-color: var(--mainD);
+    padding: 6rem;
+    box-shadow: 0 0 12px 2px var(--mainD); /* adds blur to smooth color transitions */
+    margin-top: -2px; /* layers it on top of the previous <span> */
+  }
   #benefitsSection h2{
     font-weight: 900;
     font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     text-transform: capitalize;
     text-align: center;
+    color: white;
 
   }
 
@@ -257,7 +254,7 @@ width: 100%;
 
   }
   @media (max-width: 600px) {
-    benefits{
+    .benefits{
       flex-direction: row;
   
     }
@@ -270,7 +267,8 @@ width: 100%;
     flex-grow: 1;
     gap: 5px;
     font-weight: 700;
-    border: 0.25rem solid var(--mainD);
+    border: 0.25rem solid white;
+    color: white;
     padding: 0.6rem 1.2rem;
     border-radius: 100px;
     filter: drop-shadow(0 0 0.5rem var(--main));  
@@ -285,10 +283,90 @@ width: 100%;
     align-items: center;
     justify-content: center;
     font-weight: 900;
-    color: var(--mainD);
+    color:white;
     border-radius: 50%;
 
   }
+/*------------------------------------------*/
+#products h2{
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+color: var(--mainD);
+
+}
+
+#products .cardContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  gap: 3rem;
+  
+  
+}
+#products .card{
+  padding: 3rem;
+  background-color: var(--main);
+  color: var(--mainD);
+  border-radius: 10px;
+  width: 250px;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+  box-shadow: 0 1px 5px #00000099;
+
+
+}
+#products .card:hover{
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 12px 2px var(--mainD);
+  transition-duration: 150ms;
+  box-shadow: 0 5px 20px 5px #00000044;
+}
+.card .glow {
+  position: absolute;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  
+  background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+}
+#products .cardIcon{
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+#products .cardText{
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.subtext {
+  margin-top: 1rem;
+  font-weight: 600;
+  transition: height 10s ease !important; /* Added transition for smooth effect */
+  overflow: hidden;
+  text-align: center;
+}
+
+#products .card:hover .subtext {
+height: fit-content;
+}
+
 /*------------------------------------------*/
 .whyme{
   border-bottom: 4px solid var(--mainD);
@@ -299,8 +377,15 @@ width: 100%;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 3rem;
+  margin-top: 4rem;
+
+}
+#pros .pilars{
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--mainD);
+  margin-bottom: 2rem;
 
 }
 #pros .container .row{
@@ -308,27 +393,31 @@ width: 100%;
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
-  gap: 1rem;
+}
+#pros .rows{
+
+max-width: 500px;
 }
 #pros .container .proContainer{
   display: flex;
   align-items: center;
   justify-content: left;
   min-width: 300px;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
 }
 .proIcon{
   background-color: var(--main);
   color: var(--mainD);
-  padding: 1rem;
+  padding: 0.5rem;
   width: fit-content;
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 1000px;
   font-weight: 900;
   box-shadow:
@@ -339,7 +428,7 @@ width: 100%;
 
 .proTitle{
 color: var(--mainD);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 0.2rem;
   filter: drop-shadow(0 0 1rem var(--main));  
@@ -347,7 +436,7 @@ color: var(--mainD);
 }
 
 .proExplanation{
-  max-width: 350px;
+  max-width: 500px;
   padding: 0.5rem;
   font-weight: 500;
   font-size: 1rem;
@@ -396,12 +485,15 @@ color: var(--mainD);
 }
 #contact{
   margin-bottom: 50px;
+  height: 50vh;
   margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 @media (max-width: 600px) {
@@ -415,18 +507,22 @@ color: var(--mainD);
   color: var(--mainD);
   font-weight: 900;
   text-align: right;
+  font-size: 3rem;
   margin: 0;
 }
 #contact .info{
   font-weight: 600;
   margin: 0;
+  border-radius: 10px;
+  border: 4px solid var(--mainD);
+  padding: 2rem;
 }
 #contact .info p{
   margin: 0;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 
 }
 #contact .info p svg{
@@ -436,7 +532,7 @@ color: var(--mainD);
 #contact .myname{
 font-weight: 900;
 color: var(--mainD);
-font-size: 1.2rem;
+font-size: 1.7rem;
 margin-bottom: 0.5rem!important;
 }
 
@@ -453,12 +549,12 @@ footer{
 .animated-info {
   display: inline-block;
   vertical-align: top;
-  min-width: 16rem;
+  min-width: 18rem;
   position: relative;
   text-align: left!important;
 }
 
-.animated-item, .textBello {
+.textBello {
   color: var(--mainD);
 }
 
@@ -506,4 +602,42 @@ footer{
   100% {
     opacity: 0;
   }
+}
+
+/*----------------FAQ------------*/
+#FAQs{
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+#FAQs h2{
+  font-weight: 800;
+  color: var(--mainD);
+  font-size: 2rem;
+}
+.answer {
+  display: none;
+  transition: max-height 0.3s ease-in-out; /* Smooth transition */
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Show the answer when the 'show' class is added */
+.answer.show {
+  display: block;
+  max-height: 1000px; /* Adjust this value based on your content height */
+  padding-bottom: 1rem;
+
+}
+
+/* Style for the questions */
+.question {
+  cursor: pointer;
+  /* Add additional styling as needed */
+}
+/* Style for the FAQ items */
+.faq-item {
+  /* Add additional styling as needed */
+  border-bottom: 1px solid var(--main);
 }
