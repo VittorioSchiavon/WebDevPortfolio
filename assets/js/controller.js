@@ -83,7 +83,7 @@ $cards.forEach(($card) => {
           ${center.y / 100},
           ${-center.x / 100},
           0,
-          ${Math.log(distance) * 2}deg
+          ${Math.log(distance) * 4}deg
         )
       `;
 
